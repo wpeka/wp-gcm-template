@@ -1,5 +1,7 @@
 homepage: "https://www.wplegalpages.com"
 documentation: "https://wplegalpages.com/docs/wp-cookie-consent/how-to-guides/implementing-google-consent-mode-using-wp-cookie-consent/"
 versions:
+  - sha: 5dd5077d1ca8cfe3c77c58bdc171d26d9d7106f6
+    changeNotes: Fixing bug with update consent command.
   - sha: 16cb2ac85e067ad9ff4aa39e1254d30d4eb2c736
     changeNotes: Initial release.
