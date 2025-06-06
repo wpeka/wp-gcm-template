@@ -218,6 +218,7 @@ const getCookieValues = require('getCookieValues');
 const callInWindow = require('callInWindow');
 const gtagSet = require('gtagSet');
 const JSON = require('JSON');
+const VIEWED_COOKIE = 'wpl_viewed_cookie';
 const COOKIE_NAME = 'wpl_user_preference';
 /*
  *   Splits the input string using comma as a delimiter, returning an array of
@@ -288,8 +289,10 @@ const main = (data) => {
 
   // Check if cookie is set and has values that correspond to Google consent
   // types. If it does, run onUserConsent().
+  const viewed = getCookieValues(VIEWED_COOKIE);
   const settings = getCookieValues(COOKIE_NAME);
-  if (typeof settings !== 'undefined' && settings.length > 0) {
+
+  if (typeof viewed !== 'undefined' && viewed.length > 0 && typeof settings !== 'undefined' && settings.length > 0) {
     onUserConsent(JSON.parse(settings[0]));
   }
   /**
@@ -447,6 +450,10 @@ ___WEB_PERMISSIONS___
               {
                 "type": 1,
                 "string": "wpl_user_preference"
+              },
+              {
+                "type": 1,
+                "string": "wpl_viewed_cookie"
               }
             ]
           }
