@@ -262,7 +262,7 @@ const onUserConsent = (consent) => {
     ad_user_data: consent.marketing == 'yes' ? 'granted' : 'denied',
     ad_personalization: consent.marketing == 'yes' ? 'granted' : 'denied',
     analytics_storage: consent.analytics == 'yes' ? 'granted' : 'denied',
-    functionality_storage: consent.preferences == 'yes' ? 'granted' : 'denied',
+    functionality_storage: 'granted',
     personalization_storage: consent.preferences == 'yes' ? 'granted' : 'denied',
     security_storage: 'granted',
   };
